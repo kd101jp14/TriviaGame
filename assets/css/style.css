@@ -1,0 +1,30 @@
+body {
+    background-image: url(../images/background.jpg);
+    display: block;
+    margin: 30px auto 30px auto;
+
+}
+
+h1 {
+    display: none;
+}
+
+.titleImage {
+    max-width: 100%;
+    background-color: blueviolet;
+    border: 3px hotpink solid;
+    border-radius: 40%;
+}
+
+.question {
+    background-color: hotpink;
+    color: mediumblue;
+    font-family: 'Caveat Brush', cursive;
+    font-size: 25px;
+    margin: 20px;
+    padding: 10px;
+}
+
+h2 {
+    text-align: center;
+}
