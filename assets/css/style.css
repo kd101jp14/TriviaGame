@@ -2,6 +2,7 @@ body {
     background-image: url(../images/background.jpg);
     display: block;
     margin: 30px auto 30px auto;
+    font-size: 25px;
 
 }
 
@@ -20,11 +21,26 @@ h1 {
     background-color: hotpink;
     color: mediumblue;
     font-family: 'Caveat Brush', cursive;
-    font-size: 25px;
     margin: 20px;
     padding: 10px;
 }
 
 h2 {
     text-align: center;
+}
+
+.buttonColumn {
+  margin: auto;
+}
+
+.btn-primary {
+    color: lightpink;
+    font-size: 25px;
+    font-family: 'Caveat Brush', cursive;
+    background-color: #0000cd;
+    border: 2px solid #ff69b4;
+}
+
+form {
+    width: 100%;
 }
