@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    <audio id="hereWeGo" src="assets/sounds/hereWeGo.mp3"></audio>
     <div class="container">
 
         <div id="startScreen">
@@ -48,17 +49,17 @@
         </div>
 
         <div id="gameScreen">
-            <div class="row timeDisplay">
+            <div id="timeDisplay" class="row screen1">
                 <div class="col-sm">
-                    <p>Seconds remaining: 90</p>
+                    <p id="secondsLeft">Seconds remaining: 90</p>
                 </div>
             </div>
 
-            <div class="row question">
+            <div id="q1" class="row question screen1">
                 <div class="col-sm">
                     <h2>Finish the title to this famous Spanish dance song from the 90s. "Hey ( )!"</h2>
                     <form>
-                        <input type="radio" name="choice" value=true checked> Makarena<br>
+                        <input type="radio" name="choice" value=true> Makarena<br>
                         <input type="radio" name="choice" value=false> Jude<br>
                         <input type="radio" name="choice" value=false> Ya
                     </form>
@@ -69,7 +70,7 @@
                 <div class="col-sm">
                     <h2>Which item of clothing was very trendy at this time?</h2>
                     <form>
-                        <input type="radio" name="choice" value=false checked> hoop skirts<br>
+                        <input type="radio" name="choice" value=false> hoop skirts<br>
                         <input type="radio" name="choice" value=false> wide collared shirts<br>
                         <input type="radio" name="choice" value=true> overalls
                     </form>
@@ -80,7 +81,7 @@
                 <div class="col-sm">
                     <h2>One way to contact someone was via ...</h2>
                     <form>
-                        <input type="radio" name="choice" value=false checked> Skype<br>
+                        <input type="radio" name="choice" value=false> Skype<br>
                         <input type="radio" name="choice" value=true> pager<br>
                         <input type="radio" name="choice" value=false> Myspace
                     </form>
@@ -91,7 +92,7 @@
                 <div class="col-sm">
                     <h2>Which of these presidents was in office in the 90s?</h2>
                     <form>
-                        <input type="radio" name="choice" value=false checked> George W. Bush<br>
+                        <input type="radio" name="choice" value=false> George W. Bush<br>
                         <input type="radio" name="choice" value=false> Al Gore<br>
                         <input type="radio" name="choice" value=true> Bill Clinton
                     </form>
@@ -102,7 +103,7 @@
                 <div class="col-sm">
                     <h2>Which was <b>NOT</b> a television show from this era?</h2>
                     <form>
-                        <input type="radio" name="choice" value=true checked> Three's Company<br>
+                        <input type="radio" name="choice" value=true> Three's Company<br>
                         <input type="radio" name="choice" value=false> Family Matters<br>
                         <input type="radio" name="choice" value=false> Home Improvement
                     </form>
@@ -113,7 +114,7 @@
                 <div class="col-sm">
                     <h2>Which athlete's court case was all the talk at this time?</h2>
                     <form>
-                        <input type="radio" name="choice" value=falsechecked> Tiger Woods<br>
+                        <input type="radio" name="choice" value=false> Tiger Woods<br>
                         <input type="radio" name="choice" value=false> Mike Tyson<br>
                         <input type="radio" name="choice" value=true> OJ Simpson
                     </form>
@@ -124,7 +125,7 @@
                 <div class="col-sm">
                     <h2>Which toy was <b>NOT</b> a popular toy from this era?</h2>
                     <form>
-                        <input type="radio" name="choice" value=false checked> Tamagatchi<br>
+                        <input type="radio" name="choice" value=false> Tamagatchi<br>
                         <input type="radio" name="choice" value=true> Rubik's Cube<br>
                         <input type="radio" name="choice" value=false> Tickle Me Elmo
                     </form>
