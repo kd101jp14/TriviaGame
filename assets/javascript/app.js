@@ -7,6 +7,10 @@ $(document).ready(function () {
     // It is declared globally so other functions may have access to it.
     var interval;
 
+    var correctAnswser = 0;
+    var incorrectAnswer = 0;
+    var unanswered = 0;
+
     // The user first sees the start screen.
     $("#startScreen").show();
     $("#gameScreen, #timeUpScreen").hide();
@@ -21,10 +25,32 @@ $(document).ready(function () {
         restart();
     });
 
+    // User's choices are used to determine the amount correct, incorrect, and unanswered.
+    function submitAnswer() {
+        var choices = ('input[name=choice]');
+        var userAnswer;
+
+        for (i = 0; i < choices.length; i++) {
+            if (choices[i].value === "true") {
+                correctAnswser++;
+                alert(correctAnswser);
+            }
+            if (choices[i].value === "false") {
+                incorrectAnswer++;
+                alert(incorrectAnswer);
+            }
+            if (choices[i].value !== "true" && choices[i].value !== "false") {
+                unanswered++;
+                alert(unanswered);
+            }
+        }
+
+    }
+
     // Instead of waiting for time to run out, the user may see results by pressing the submit button.
     $("#submitButton").click(function () {
         timeUp();
-        clearInterval(interval);
+        $(secondsLeft).text("Seconds remaining: 90");
     });
 
     function restart() {
@@ -38,9 +64,8 @@ $(document).ready(function () {
         counter--;
         $(secondsLeft).text("Seconds remaining: " + counter);
         if (counter === 0) {
-            clearInterval(interval);
             timeUp();
-            counter = 10; 
+            $(secondsLeft).text("Seconds remaining: 90");
         }
     }
 
@@ -48,6 +73,8 @@ $(document).ready(function () {
         $("#startScreen, #gameScreen").hide();
         $("#timeUpScreen").show();
         $("#yay")[0].play();
+        clearInterval(interval);
+        counter = 90;
     }
 
 
