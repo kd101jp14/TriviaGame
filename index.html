@@ -9,7 +9,7 @@
     <!-- jQuery CDN Link-->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-    <!-- Link to external JavaScript code -->
+    <!-- Link to External JavaScript File -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <!-- Bootstrap CDN Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -22,7 +22,9 @@
 </head>
 
 <body>
+
     <audio id="hereWeGo" src="assets/sounds/hereWeGo.mp3"></audio>
+
     <div class="container">
 
         <div id="startScreen">
@@ -49,15 +51,15 @@
         </div>
 
         <div id="gameScreen">
-            <div id="timeDisplay" class="row screen1">
+            <div id="timeDisplay" class="row">
                 <div class="col-sm">
                     <p id="secondsLeft">Seconds remaining: 90</p>
                 </div>
             </div>
 
-            <div id="q1" class="row question screen1">
+            <div id="q1" class="row question">
                 <div class="col-sm">
-                    <h2>Finish the title to this famous Spanish dance song from the 90s. "Hey ( )!"</h2>
+                    <h2>Finish the title to this famous Spanish dance song from the 90s. "Hey ...!"</h2>
                     <form>
                         <input type="radio" name="choice" value=true> Makarena<br>
                         <input type="radio" name="choice" value=false> Jude<br>
@@ -135,6 +137,21 @@
             <div class="row buttonRow">
                 <div class="column buttonColumn">
                     <button type="submit" class="btn btn-primary mb-2">Submit Those Answers!</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="timeUpScreen">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="correct">Correct: </div>
+                    <div id="incorrect">Incorrect: </div>
+                    <div id="unanswered">Unanswered: </div>
+                </div>
+            </div>
+            <div class="row buttonRow">
+                <div class="column buttonColumn">
+                    <button type="start" id="restartButton" class="btn btn-primary mb-2">Restart</button>
                 </div>
             </div>
         </div>
