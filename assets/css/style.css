@@ -17,8 +17,10 @@ h1 {
     border-radius: 40%;
 }
 
+
 .instructions,
-.question {
+.question,
+#timeUpScreen {
     background-color: hotpink;
     color: mediumblue;
     font-family: 'Caveat Brush', cursive;
@@ -37,14 +39,18 @@ p {
     font-size: 30px;
     font-family: 'Caveat Brush', cursive;
     background-color: #0000cd;
-    border: 2px solid #ff69b4;
+    border: 2px solid #b5f2d4;
 
-}
-
-.buttonColumn {
-  margin: auto;
 }
 
 form {
     width: 100%;
+}
+
+.buttonColumn {
+    margin: auto;
+}
+
+#timeUpScreen {
+    text-align: center;
 }
