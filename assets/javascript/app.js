@@ -7,7 +7,7 @@ $(document).ready(function () {
     // It is declared globally so other functions may have access to it.
     var interval;
 
-    var correctAnswser = 0;
+    var correctAnswer = 0;
     var incorrectAnswer = 0;
     var unanswered = 0;
 
@@ -27,47 +27,64 @@ $(document).ready(function () {
 
     // User's choices are used to determine the amount correct, incorrect, and unanswered.
     function submitAnswer() {
-        var choices = ('input[name=choice]');
-        var userAnswer;
 
-        for (i = 0; i < choices.length; i++) {
-            if (choices[i].value === "true") {
-                correctAnswser++;
-                alert(correctAnswser);
-            }
-            if (choices[i].value === "false") {
-                incorrectAnswer++;
-                alert(incorrectAnswer);
-            }
-            if (choices[i].value !== "true" && choices[i].value !== "false") {
-                unanswered++;
-                alert(unanswered);
-            }
-        }
+        var numOfQuestions = 7;
+        var ansArr = ["a", "c", "b", "c", "a", "c", "b"];
 
-    }
+        // Get the values of the user's input ans store them in variables.
+        var q1Val = $("#form1 input[type='radio']:checked").val();
+        var q2Val = $("#form2 input[type='radio']:checked").val();
+        var q3Val = $("#form3 input[type='radio']:checked").val();
+        var q4Val = $("#form4 input[type='radio']:checked").val();
+        var q5Val = $("#form5 input[type='radio']:checked").val();
+        var q6Val = $("#form6 input[type='radio']:checked").val();
+        var q7Val = $("#form7 input[type='radio']:checked").val();
+
+        console.log(q1Val, q2Val, q3Val, q4Val, q5Val, q6Val, q7Val);
+
+        // Loop through the values, compare them to the correct answers in the `ansArr` array,
+        // and determine if it is unanaswered, correct, or incorrect. Update results accordingly.
+        for (i = 1; i <= numOfQuestions; i++) {
+
+            if (eval("q" + i + "Val") === undefined) {
+                unanswered++
+            } else if (eval("q" + i + "Val") === ansArr[i - 1]) {
+                correctAnswer++
+            } else if (eval("q" + i + "Val") !== ansArr[i - 1]) {
+                incorrectAnswer++
+                
+            }
+            $("#correct").text("Correct: " + correctAnswer);
+            $("#incorrect").text("Incorrect: " + incorrectAnswer);
+            $("#unanswered").text("Unanswered: " + unanswered);
+        };
+    };
 
     // Instead of waiting for time to run out, the user may see results by pressing the submit button.
     $("#submitButton").click(function () {
+        submitAnswer();
         timeUp();
-        $(secondsLeft).text("Seconds remaining: 90");
     });
 
     function restart() {
-        // All choices are cleared/unchecked.
-        $('input[name=choice]').prop('checked', false);
+        // All choice are cleared/unchecked.
+        $('input[class=userChoice]').prop('checked', false);
         // Time starts over.
         interval = setInterval(decreaseSeconds, 1000);
+        correctAnswer = 0;
+        incorrectAnswer = 0;
+        unanswered = 0;
     }
 
     function decreaseSeconds() {
         counter--;
         $(secondsLeft).text("Seconds remaining: " + counter);
         if (counter === 0) {
+            submitAnswer();
             timeUp();
             $(secondsLeft).text("Seconds remaining: 90");
-        }
-    }
+        };
+    };
 
     function timeUp() {
         $("#startScreen, #gameScreen").hide();
@@ -76,9 +93,4 @@ $(document).ready(function () {
         clearInterval(interval);
         counter = 90;
     }
-
-
-
-
-
 });
